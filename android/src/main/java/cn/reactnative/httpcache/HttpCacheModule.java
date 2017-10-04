@@ -1,6 +1,8 @@
 package cn.reactnative.httpcache;
 
 import android.content.Intent;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 
 import com.facebook.cache.disk.DiskStorageCache;
 import com.facebook.cache.disk.FileCache;
@@ -39,6 +41,8 @@ public class HttpCacheModule extends ReactContextBaseJavaModule {
             if (cache != null) {
                 cache.delete();
             }
+            CookieManager.getInstance().removeAllCookie();
+            CookieSyncManager.getInstance().sync();
             promise.resolve(null);
         } catch(IOException e){
             promise.reject(e);
