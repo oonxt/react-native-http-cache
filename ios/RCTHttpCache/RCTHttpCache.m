@@ -7,15 +7,15 @@
 //
 
 #import "RCTHttpCache.h"
-//#import "RCTImageLoader.h"
+#import "React/RCTImageLoader.h"
 #import "RCTImageCache.h"
-//#import "RCTBridge.h"
+#import "React/RCTBridge.h"
 
 @implementation RCTHttpCache
 
 @synthesize bridge = _bridge;
 
-RCT_EXPORT_MODULE(HttpCache);
+RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(getHttpCacheSize:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 {

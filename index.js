@@ -2,15 +2,15 @@
  * Created by tdzl2_000 on 2015-12-29.
  */
 import { NativeModules } from 'react-native';
-const native = NativeModules.HttpCache;
+const {HttpCache} = NativeModules;
 
-export const clearHttpCache = native.clearCache;
+export const clearHttpCache = HttpCache.clearCache;
 
-export const getHttpCacheSize = native.getHttpCacheSize;
+export const getHttpCacheSize = HttpCache.getHttpCacheSize;
 
-export const clearImageCache = native.clearImageCache;
+export const clearImageCache = HttpCache.clearImageCache;
 
-export const getImageCacheSize = native.getImageCacheSize;
+export const getImageCacheSize = HttpCache.getImageCacheSize;
 
 export async function getCacheSize(){
   const arr = await Promise.all([getHttpCacheSize(), getImageCacheSize()]);
